@@ -20,7 +20,7 @@ object Part2 extends IOApp {
     finalInput =  grouped._2::grouped._1
     processed  =  finalInput.map(answers => answers.map(_.toSet).foldLeft(all)(_.intersect(_)))
     answer     =  processed.map(_.size).sum
-    _          <- IO { println(s"Sum of yes anwsers is $answer.") }
+    _          <- IO { println(s"Sum of yes answers is $answer.") }
   } yield {
     ExitCode.Success
   }
