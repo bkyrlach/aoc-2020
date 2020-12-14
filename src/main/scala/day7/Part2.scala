@@ -21,7 +21,7 @@ object Part2 extends IOApp {
     ExitCode.Success
   }
 
-  def edgeWeightsFrom(b: Bag, env: Map[Bag,List[(Bag,Int)]]): Int = 
+  def edgeWeightsFrom(b: Bag, env: Map[Bag,List[(Bag,Int)]]): Int =
     env.getOrElse(b, Nil).map {
       case (o,w) => (1 + edgeWeightsFrom(o, env)) * w
     }.sum
